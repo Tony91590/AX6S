@@ -1,0 +1,11 @@
+sed -i 's/channel=.*/channel="debug"/g' /etc/init.d/dropbear
+/etc/init.d/dropbear restart
+mkdir /data/auto_ssh
+cd /data/auto_ssh
+curl -O https://raw.githubusercontent.com/Tony91590/AX6/old/auto_ssh.sh
+chmod +x auto_ssh.sh
+uci set firewall.auto_ssh=include
+uci set firewall.auto_ssh.type='script'
+uci set firewall.auto_ssh.path='/data/auto_ssh/auto_ssh.sh'
+uci set firewall.auto_ssh.enabled='1'
+reboot
