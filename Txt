@@ -9,3 +9,15 @@ uci set firewall.auto_ssh.type='script'
 uci set firewall.auto_ssh.path='/data/auto_ssh/auto_ssh.sh'
 uci set firewall.auto_ssh.enabled='1'
 reboot
+
+mkdir /data/tx_power
+cd /data/tx_power.sh
+curl -O https://raw.githubusercontent.com/Tony91590/AX6S/old/tx_power.sh
+chmod +x tx_power.sh
+uci set firewall.tx_power=include
+uci set firewall.tx_power.type='script'
+uci set firewall.tx_power.path='/data/tx_power/tx_power.sh'
+uci set firewall.tx_power.enabled='1'
+reboot
+
+tx_power.sh
