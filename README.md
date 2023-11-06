@@ -32,6 +32,19 @@
 经过上面的步骤，已经成功在小米路由器上解锁 SSH 服务，但是由于小米路由器是 Snapshot 系统，重启会重置为最初状态，导致解锁 SSH 失效。  
 解决办法：添加一个开机自动执行的脚本，来实现自动开启 SSH 服务：  
     ```shell
+
+sed -i 's/channel=.*/channel="debug"/g' /etc/init.d/dropbear
+/etc/init.d/dropbear restart
+mkdir /data/auto_ssh
+cd /data/auto_ssh
+curl -O https://raw.githubusercontent.com/Tony91590/AX6S@old/auto_ssh.sh
+chmod +x auto_ssh.sh
+uci set firewall.auto_ssh=include
+uci set firewall.auto_ssh.type='script'
+uci set firewall.auto_ssh.path='/data/auto_ssh/auto_ssh.sh'
+uci set firewall.auto_ssh.enabled='1'
+reboot
+
     # 创建一个目录用于放置脚本文件
     mkdir /data/auto_ssh && cd /data/auto_ssh
 
@@ -59,7 +72,7 @@
     uci commit firewall
     ```
 
-5. 如何切换回稳定版系统  
+6. 如何切换回稳定版系统  
 小米路由器是双系统分区，系统更新会刷写到另一个分区然后从另一个分区启动，所以更新开发版之后，之前的稳定版系统还存在于原来的分区。可以通过修改引导分区切换回升级前的系统。
 
     首先查看当前引导分区：  
