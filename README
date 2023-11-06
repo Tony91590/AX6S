@@ -1,3 +1,5 @@
+For (AX6000 xiaomi) no redmi 
+
 sed -i 's/channel=.*/channel="debug"/g' /etc/init.d/dropbear
 /etc/init.d/dropbear restart
 mkdir /data/auto_ssh && cd /data/auto_ssh
