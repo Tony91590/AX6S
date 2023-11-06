@@ -25,6 +25,8 @@ fi
 if [ -z "$(pidof dropbear)" -o -z "$(netstat -ntul | grep :22)" ]; then
   /etc/init.d/dropbear restart 2>/dev/null
   /etc/init.d/dropbear enable
+# Wifi-power for me
+  (sleep 60; iwconfig wl0 txpower 21; iwconfig wl1 txpower 17) &
 fi
 
 # Backup the host key.
