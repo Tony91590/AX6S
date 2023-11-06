@@ -13,8 +13,8 @@ host_key_bk=/data/auto_ssh/dropbear_rsa_host_key
 [ "$(nvram get boot_wait)" = "off" ] && nvram set boot_wait=on && nvram commit
 
 [ "$(uci -c /usr/share/xiaoqiang get xiaoqiang_version.version.CHANNEL)" != 'stable' ] && {
-uci -c /usr/share/xiaoqiang set xiaoqiang_version.version.CHANNEL='stable'
-uci -c /usr/share/xiaoqiang commit xiaoqiang_version.version 2>/dev/null
+	uci -c /usr/share/xiaoqiang set xiaoqiang_version.version.CHANNEL='stable'
+	uci -c /usr/share/xiaoqiang commit xiaoqiang_version.version 2>/dev/null
 }
 
 channel=$(/sbin/uci get /usr/share/xiaoqiang/xiaoqiang_version.version.CHANNEL)
