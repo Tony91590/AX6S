@@ -29,6 +29,7 @@ if [ -z "$(pidof dropbear)" -o -z "$(netstat -ntul | grep :22)" ]; then
   (sleep 60;iwconfig wl0 txpower 21;iwconfig wl1 txpower 17)&
 # Miwifi off
 
+  /etc/init.d/network reload
 fi
 
 # Backup the host key.
