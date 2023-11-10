@@ -27,6 +27,8 @@ if [ -z "$(pidof dropbear)" -o -z "$(netstat -ntul | grep :22)" ]; then
   /etc/init.d/dropbear enable
 # Wifi txpower for me
   (sleep 60;iwconfig wl0 txpower 21;iwconfig wl1 txpower 17)&
+# Miwifi off
+
 fi
 
 # Backup the host key.
