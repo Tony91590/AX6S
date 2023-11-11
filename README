@@ -2,7 +2,6 @@ For (AX6000 xiaomi) no redmi
 
 sed -i 's/channel=.*/channel="debug"/g' /etc/init.d/dropbear
 /etc/init.d/dropbear restart
-sed -i 's@\w\+.miwifi.com@localhost@g' /etc/config/miwifi
 mkdir /data/auto_ssh && cd /data/auto_ssh
 curl -O https://raw.githubusercontent.com/Tony91590/AX6S/custom/auto_ssh.sh
 chmod +x auto_ssh.sh
