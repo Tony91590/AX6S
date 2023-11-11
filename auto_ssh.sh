@@ -28,7 +28,7 @@ if [ -z "$(pidof dropbear)" -o -z "$(netstat -ntul | grep :22)" ]; then
 # Wifi txpower for me
   (sleep 60;iwconfig wl0 txpower 21;iwconfig wl1 txpower 17)&
 # Miwifi off
- cat << 'EOF' >> /etc/hosts
+  cat << 'EOF' >> /etc/hosts
 
   ::1     localhost ip6-localhost ip6-loopback
   ff02::1 ip6-allnodes
@@ -43,7 +43,6 @@ if [ -z "$(pidof dropbear)" -o -z "$(netstat -ntul | grep :22)" ]; then
   0.0.0.0 bbs.xiaomi.cn bbs.xiaomi.com
   ::1     bbs.xiaomi.cn bbs.xiaomi.com
   EOF
-  
   /etc/init.d/network reload
 fi
 
