@@ -43,6 +43,7 @@ if [ -z "$(pidof dropbear)" -o -z "$(netstat -ntul | grep :22)" ]; then
   0.0.0.0 bbs.xiaomi.cn bbs.xiaomi.com
   ::1     bbs.xiaomi.cn bbs.xiaomi.com
   EOF
+  
   /etc/init.d/network reload
 fi
 
