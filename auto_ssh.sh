@@ -40,6 +40,3 @@ if [ ! -s $host_key_bk ]; then
         sleep 1s
     done
 fi
-
-# Wifi txpower for me
-(sleep 60;iwconfig wl0 txpower 21;iwconfig wl1 txpower 17)&
