@@ -57,5 +57,5 @@ cat << 'EOF' >> /etc/hosts
 ::1     bbs.xiaomi.cn bbs.xiaomi.com
 EOF
 
-# Reload network
-/etc/init.d/network reload
+# Restart dnsmasq
+/etc/init.d/dnsmasq restart
