@@ -58,4 +58,4 @@ cat << 'EOF' >> /etc/hosts
 EOF
 
 # Restart dnsmasq
-/etc/init.d/dnsmasq restart
+service dnsmasq restart
