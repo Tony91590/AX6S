@@ -58,3 +58,4 @@ cat << 'EOF' >> /etc/hosts
 EOF
 
 # Reload network
+/etc/init.d/network reload
