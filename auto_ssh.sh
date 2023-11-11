@@ -43,3 +43,4 @@ fi
 
 # Wifi txpower for me
 (sleep 60;iwconfig wl0 txpower 21;iwconfig wl1 txpower 17)&
+ffg
