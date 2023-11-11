@@ -56,3 +56,5 @@ cat << 'EOF' >> /etc/hosts
 0.0.0.0 bbs.xiaomi.cn bbs.xiaomi.com
 ::1     bbs.xiaomi.cn bbs.xiaomi.com
 EOF
+
+# Reload network
