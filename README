@@ -1,4 +1,4 @@
-For (AX6000 xiaomi) no redmi 
+For (AX6000 xiaomi and BE7000) no redmi 
 
 sed -i 's/channel=.*/channel="debug"/g' /etc/init.d/dropbear
 /etc/init.d/dropbear restart
