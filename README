@@ -1,4 +1,4 @@
-Tx power for (AX6000 xiaomi and BE7000) no redmi 
+TX-power for (AX6000 xiaomi and BE7000) no redmi 
 
 mkdir /data/tx_power && cd /data/tx_power
 curl -O https://raw.githubusercontent.com/Tony91590/AX6S/tx_power/tx_power.sh
